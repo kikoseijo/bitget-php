@@ -117,4 +117,12 @@ class Market extends Request
         $this->data=$data;
         return $this->exec();
     }
+
+    public function getSymbolLeverage(array $data=[])
+    {
+        $this->type='GET';
+        $this->path='/data/v1/market/symbol-leverage';
+        $this->data=$data;
+        return $this->exec();
+    }
 }

@@ -135,7 +135,7 @@ class Request
 
         switch ($this->platform) {
             case 'spot':{
-                $url. = '?'."sign=" . $this->signature . "&req_time=" . $this->nonce . "&accesskey=" . $this->key;
+                $url .= '?'."sign=" . $this->signature . "&req_time=" . $this->nonce . "&accesskey=" . $this->key;
                 if ($this->type == 'GET') {
                     $url .= empty($this->data) ? '' : '&'.http_build_query($this->data);
                 } else {
