@@ -1,0 +1,22 @@
+{
+    "name": "kikoseijo/bitget",
+    "type": "library",
+    "description": "Bitget API Like the official document interface, Support for arbitrary extension.",
+    "license": "MIT",
+    "keywords": ["bitget"],
+    "authors": [
+        {
+            "name": "Kiko Seijo",
+            "email": "kikopc@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Ksoft\\Bitget\\": "./src/"
+        }
+    },
+    "require": {
+        "php": ">=7.0",
+        "guzzlehttp/guzzle": "*"
+    }
+}
