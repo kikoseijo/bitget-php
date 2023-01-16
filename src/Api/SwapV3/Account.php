@@ -9,7 +9,7 @@ class Account extends Request
     public function getAccounts(array $data=[])
     {
         $this->type='GET';
-        $this->path='/api/swap/v3/account/accounts';
+        $this->path='/api/mix/v1/account/accounts';
         $this->data=$data;
         return $this->exec();
     }
@@ -17,7 +17,7 @@ class Account extends Request
     public function getAccount(array $data=[])
     {
         $this->type='GET';
-        $this->path='/api/swap/v3/account/account';
+        $this->path='/api/mix/v1/account/account';
         $this->data=$data;
         return $this->exec();
     }
@@ -25,7 +25,7 @@ class Account extends Request
     public function getSettings(array $data=[])
     {
         $this->type='GET';
-        $this->path='/api/swap/v3/account/settings';
+        $this->path='/api/mix/v1/account/settings';
         $this->data=$data;
         return $this->exec();
     }
@@ -33,7 +33,7 @@ class Account extends Request
     public function postLeverage(array $data=[])
     {
         $this->type='POST';
-        $this->path='/api/swap/v3/account/leverage';
+        $this->path='/api/mix/v1/account/leverage';
         $this->data=$data;
         return $this->exec();
     }
@@ -41,7 +41,7 @@ class Account extends Request
     public function postAdjustMargin(array $data=[])
     {
         $this->type='POST';
-        $this->path='/api/swap/v3/account/adjustMargin';
+        $this->path='/api/mix/v1/account/adjustMargin';
         $this->data=$data;
         return $this->exec();
     }
@@ -49,7 +49,7 @@ class Account extends Request
     public function postModifyAutoAppendMargin(array $data=[])
     {
         $this->type='POST';
-        $this->path='/api/swap/v3/account/modifyAutoAppendMargin';
+        $this->path='/api/mix/v1/account/modifyAutoAppendMargin';
         $this->data=$data;
         return $this->exec();
     }

@@ -9,7 +9,7 @@ class Trace extends Request
     public function postCloseTrackOrder(array $data=[])
     {
         $this->type='POST';
-        $this->path='/api/swap/v3/trace/closeTrackOrder';
+        $this->path='/api/mix/v1/trace/closeTrackOrder';
         $this->data=$data;
         return $this->exec();
     }
@@ -17,7 +17,7 @@ class Trace extends Request
     public function getCurrentTrack(array $data=[])
     {
         $this->type='GET';
-        $this->path='/api/swap/v3/trace/currentTrack';
+        $this->path='/api/mix/v1/trace/currentTrack';
         $this->data=$data;
         return $this->exec();
     }
@@ -25,7 +25,7 @@ class Trace extends Request
     public function getHistoryTrack(array $data=[])
     {
         $this->type='GET';
-        $this->path='/api/swap/v3/trace/historyTrack';
+        $this->path='/api/mix/v1/trace/historyTrack';
         $this->data=$data;
         return $this->exec();
     }

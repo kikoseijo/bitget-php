@@ -9,7 +9,7 @@ class Position extends Request
     public function getAllPosition(array $data=[])
     {
         $this->type='GET';
-        $this->path='/api/swap/v3/position/allPosition';
+        $this->path='/api/mix/v1/position/allPosition';
         $this->data=$data;
         return $this->exec();
     }
@@ -17,7 +17,7 @@ class Position extends Request
     public function getSinglePosition(array $data=[])
     {
         $this->type='GET';
-        $this->path='/api/swap/v3/position/singlePosition';
+        $this->path='/api/mix/v1/position/singlePosition';
         $this->data=$data;
         return $this->exec();
     }
@@ -25,7 +25,7 @@ class Position extends Request
     public function postChangeHoldModel(array $data=[])
     {
         $this->type='POST';
-        $this->path='/api/swap/v3/position/changeHoldModel';
+        $this->path='/api/mix/v1/position/changeHoldModel';
         $this->data=$data;
         return $this->exec();
     }
