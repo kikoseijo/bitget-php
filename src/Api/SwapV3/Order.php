@@ -54,6 +54,14 @@ class Order extends Request
         return $this->exec();
     }
 
+    public function getProductHistory(array $data=[])
+    {
+        $this->type='GET';
+        $this->path='/api/mix/v1/order/historyProductType';
+        $this->data=$data;
+        return $this->exec();
+    }
+
     public function getCurrent(array $data=[])
     {
         $this->type='GET';

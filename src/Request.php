@@ -162,8 +162,10 @@ class Request
     {
         $this->auth();
 
+        return json_decode($this->send(), true);
+
         try {
-            return json_decode($this->send(), true);
+          return json_decode($this->send(), true);
         } catch (RequestException $e) {
             if (method_exists($e->getResponse(), 'getBody')) {
                 $contents = $e->getResponse()->getBody()->getContents();
