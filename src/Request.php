@@ -3,6 +3,7 @@
 namespace Ksoft\Bitget;
 
 use GuzzleHttp\Exception\RequestException;
+use Guzzle\Http\Exception\ClientErrorResponseException;
 use Ksoft\Bitget\Exceptions\Exception;
 
 class Request
@@ -162,28 +163,17 @@ class Request
     {
         $this->auth();
 
-        return json_decode($this->send(), true);
-
         try {
-          return json_decode($this->send(), true);
-        } catch (RequestException $e) {
-            if (method_exists($e->getResponse(), 'getBody')) {
-                $contents = $e->getResponse()->getBody()->getContents();
 
-                $temp = json_decode($contents, true);
-                if (!empty($temp)) {
-                    $temp['_method'] = $this->type;
-                    $temp['_url'] = $this->host.$this->path;
-                } else {
-                    $temp['_message'] = $e->getMessage();
-                }
+            return json_decode($this->send(), true);
+        } catch (ClientErrorResponseException $e) {
+            if (method_exists($e->getResponse(), 'getBody')) {
+                $contents = $e->getResponse()->getBody(true);
             } else {
-                $temp['_message'] = $e->getMessage();
+                $contents = $e->getMessage();
             }
 
-            $temp['_httpcode'] = $e->getCode();
-
-            throw new Exception(json_encode($temp));
+            return json_decode($contents, true);
         }
     }
 
