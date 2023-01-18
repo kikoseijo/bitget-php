@@ -3,7 +3,7 @@
 namespace Ksoft\Bitget;
 
 use GuzzleHttp\Exception\RequestException;
-use Guzzle\Http\Exception\ClientErrorResponseException;
+use GuzzleHttp\Exception\ClientException;
 use Ksoft\Bitget\Exceptions\Exception;
 
 class Request
@@ -166,7 +166,7 @@ class Request
         try {
 
             return json_decode($this->send(), true);
-        } catch (ClientErrorResponseException $e) {
+        } catch (ClientException $e) {
             if (method_exists($e->getResponse(), 'getBody')) {
                 $contents = $e->getResponse()->getBody(true);
             } else {
