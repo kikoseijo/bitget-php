@@ -46,6 +46,15 @@ class Order extends Request
         return $this->exec();
     }
 
+    public function getMarginCoinHistory(array $data=[])
+    {
+        $this->type = 'GET';
+        $this->path = '/api/mix/v1/order/marginCoinCurrent';
+        $this->data = $data;
+
+        return $this->exec();
+    }
+
     public function getHistory(array $data=[])
     {
         $this->type='GET';
