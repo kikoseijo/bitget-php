@@ -105,7 +105,7 @@ class Market extends Request
     public function getMarkPrice(array $data=[])
     {
         $this->type='GET';
-        $this->path='/api/mix/v1/market/mark_price';
+        $this->path='/api/mix/v1/market/mark-price';
         $this->data=$data;
         return $this->exec();
     }
