@@ -126,4 +126,12 @@ class Order extends Request
         $this->data=$data;
         return $this->exec();
     }
+
+    public function placeTPSL(array $data=[])
+    {
+        $this->type='POST';
+        $this->path='/api/mix/v1/plan/placeTPSL';
+        $this->data=$data;
+        return $this->exec();
+    }
 }
